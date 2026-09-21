@@ -44,3 +44,16 @@ homey app install
 ```
 
 Licensed GPL-3.0, same as upstream.
+
+## Checking the module password without the Rain Bird app
+
+The Homey pairing wizard needs the LNK's device password. To verify a candidate
+without going through the mobile app (which re-runs onboarding and can wipe a
+working WiFi config):
+
+```
+read -s -p "LNK wachtwoord: " RB_PASSWORD && export RB_PASSWORD && \
+  node tools/test-lnk.mjs; unset RB_PASSWORD
+```
+
+Prints the controller model, firmware, serial and zone list on success.
