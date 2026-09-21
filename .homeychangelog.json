@@ -1,0 +1,39 @@
+{
+  "1.0.0": {
+    "en": "Initial Rainbird app release"
+  },
+  "1.0.1": {
+    "en": "First Rain Bird app release"
+  },
+  "1.0.2": {
+    "en": "Update naming to be consistent"
+  },
+  "1.0.3": {
+    "en": "Update metadata"
+  },
+  "1.1.0": {
+    "en": "Ability to rename zones through the repair option"
+  },
+  "1.1.1": {
+    "en": "Fix zones from wrong controller showing up"
+  },
+  "1.2.0": {
+    "en": "Better pairing, mention RC2 support"
+  },
+  "1.2.1": {
+    "en": "Fix pairing routine"
+  },
+  "1.2.2": {
+    "en": "Rain sensor support"
+  },
+  "1.2.3": {
+    "en": "New card"
+  },
+  "1.2.4": {
+    "en": "Trying to catch RainSetPoint better"
+  },
+  "1.3.0": {
+    "en": "Support controllers with HTTPS-only firmware (rainbird library 1.2.17). Added rain delay (read, set, condition, trigger) and a start-program action.",
+    "nl": "Ondersteunt controllers met HTTPS-only firmware (rainbird library 1.2.17). Regenuitstel toegevoegd (uitlezen, instellen, conditie, trigger) plus een actie om een programma te starten."
+  }
+}

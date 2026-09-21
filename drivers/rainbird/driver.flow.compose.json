@@ -1,0 +1,280 @@
+{
+    "triggers": [
+        {
+            "id": "turns_on",
+            "title": {
+                "en": "Starts irrigation",
+                "nl": "Irrigatie start"
+            },
+            "hint": {
+                "en": "When the Rain Bird turns on any zone"
+            }
+        },
+        {
+            "id": "turns_off",
+            "title": {
+                "en": "Stops irrigation",
+                "nl": "Irrigatie stopt"
+            },
+            "hint": {
+                "en": "When the Rain Bird has no active zones"
+            }
+        },
+        {
+            "id": "rain_set_point_changed",
+            "title": {
+                "en": "Rain set point changed",
+                "nl": "Regen setpoint veranderd"
+            },
+            "hint": {
+                "en": "When the rain set point is changed"
+            }
+        },
+        {
+            "id": "rain_set_point_reached",
+            "title": {
+                "en": "Rain set point reached",
+                "nl": "Regen setpoint gehaald"
+            },
+            "hint": {
+                "en": "When the rain set point is reached"
+            }
+        },
+        {
+            "id": "rain_delay_changed",
+            "title": {
+                "en": "Rain delay changed",
+                "nl": "Regenuitstel veranderd"
+            },
+            "hint": {
+                "en": "When the number of rain delay days on the controller changes",
+                "nl": "Wanneer het aantal dagen regenuitstel op de controller verandert"
+            },
+            "tokens": [
+                {
+                    "name": "days",
+                    "type": "number",
+                    "title": {
+                        "en": "Days",
+                        "nl": "Dagen"
+                    },
+                    "example": 2
+                }
+            ]
+        }
+    ],
+    "conditions": [
+        {
+            "id": "rain_set_point_active",
+            "title": {
+                "en": "Rain set point !{{is|isn't}} reached",
+                "nl": "Regen setpoint !{{is|is niet}} bereikt"
+            }
+        },
+        {
+            "id": "rainbird_is_active",
+            "title": {
+                "en": "!{{Is|Isn't}} active",
+                "nl": "!{{Is|Is niet}} actief"
+            }
+        },
+        {
+            "id": "zone_is_active",
+            "title": {
+                "en": "Zone !{{is|isn't}} active",
+                "nl": "Zone !{{is|is niet}} actief"
+            },
+            "titleFormatted": {
+                "en": "Zone [[zone]] !{{is|isn't}} active",
+                "nl": "Zone [[zone]] !{{is|is niet}} actief"
+            },
+            "args": [
+                {
+                    "type": "autocomplete",
+                    "name": "zone",
+                    "title": {
+                        "en": "Zone"
+                    },
+                    "placeholder": {
+                        "en": "Irrigation zone"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "rain_delay_active",
+            "title": {
+                "en": "Rain delay !{{is|isn't}} active",
+                "nl": "Regenuitstel !{{is|is niet}} actief"
+            }
+        }
+    ],
+    "actions": [
+        {
+            "id": "start_zone",
+            "title": "Start a zone",
+            "titleFormatted": {
+                "en": "Start zone [[zone]]",
+                "nl": "Start zone [[zone]]"
+            },
+            "args": [
+                {
+                    "type": "autocomplete",
+                    "name": "zone",
+                    "title": {
+                        "en": "Zone"
+                    },
+                    "placeholder": {
+                        "en": "Irrigation zone",
+                        "nl": "Irrigatie zone"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "start_zone_X_minutes",
+            "title": "Start a zone for a certain amount of time",
+            "titleFormatted": {
+                "en": "Start zone [[zone]] for [[minutes]] minutes",
+                "nl": "Start zone [[zone]] voor [[minutes]] minuten"
+            },
+            "args": [
+                {
+                    "type": "autocomplete",
+                    "name": "zone",
+                    "title": {
+                        "en": "Zone"
+                    },
+                    "placeholder": {
+                        "en": "Irrigation zone",
+                        "nl": "Irrigatie zone"
+                    }
+                },
+                {
+                    "type": "number",
+                    "name": "minutes",
+                    "title": {
+                        "en": "Time",
+                        "nl": "Tijd"
+                    },
+                    "placeholder": {
+                        "en": "In minutes",
+                        "nl": "In minuten"
+                    },
+                    "min": 1,
+                    "max": 100
+                }
+            ]
+        },
+        {
+            "id": "stop_zone",
+            "title": "Stop a zone",
+            "titleFormatted": {
+                "en": "Stop zone [[zone]]",
+                "nl": "Stop zone [[zone]]"
+            },
+            "args": [
+                {
+                    "type": "autocomplete",
+                    "name": "zone",
+                    "title": {
+                        "en": "Zone"
+                    },
+                    "placeholder": {
+                        "en": "Irrigation zone"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "stop_irrigation",
+            "title": {
+                "en": "Stop irrigation",
+                "nl": "Stop irrigatie"
+            }
+        },
+        {
+            "id": "set_rain_delay",
+            "title": {
+                "en": "Set rain delay",
+                "nl": "Stel regenuitstel in"
+            },
+            "titleFormatted": {
+                "en": "Set rain delay to [[days]] days",
+                "nl": "Stel regenuitstel in op [[days]] dagen"
+            },
+            "hint": {
+                "en": "Suspends all automatic irrigation on the controller for this many days. 0 clears the delay.",
+                "nl": "Schort alle automatische beregening op de controller op voor dit aantal dagen. 0 heft het uitstel op."
+            },
+            "args": [
+                {
+                    "type": "number",
+                    "name": "days",
+                    "title": {
+                        "en": "Days",
+                        "nl": "Dagen"
+                    },
+                    "placeholder": {
+                        "en": "0 - 14",
+                        "nl": "0 - 14"
+                    },
+                    "min": 0,
+                    "max": 14,
+                    "step": 1
+                }
+            ]
+        },
+        {
+            "id": "start_program",
+            "title": {
+                "en": "Start a program",
+                "nl": "Start een programma"
+            },
+            "titleFormatted": {
+                "en": "Start program [[program]]",
+                "nl": "Start programma [[program]]"
+            },
+            "hint": {
+                "en": "Runs one of the controller's own programs, as if the button was pressed.",
+                "nl": "Draait een van de eigen programma's van de controller, alsof je de knop indrukt."
+            },
+            "args": [
+                {
+                    "type": "dropdown",
+                    "name": "program",
+                    "title": {
+                        "en": "Program",
+                        "nl": "Programma"
+                    },
+                    "values": [
+                        {
+                            "id": "A",
+                            "label": {
+                                "en": "A"
+                            }
+                        },
+                        {
+                            "id": "B",
+                            "label": {
+                                "en": "B"
+                            }
+                        },
+                        {
+                            "id": "C",
+                            "label": {
+                                "en": "C"
+                            }
+                        },
+                        {
+                            "id": "D",
+                            "label": {
+                                "en": "D"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
