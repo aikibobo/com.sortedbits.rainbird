@@ -118,7 +118,10 @@ class RainbirdDevice extends Homey.Device {
         const { zones, host, password, debug, enableQueueing, defaultIrrigationTime, zonesAvailable } = this.getSettings();
 
         this.zones = zones;
-        this.log('Getting configured zones', this.zones);
+        // Was read from settings but never assigned, so queueing was always off and
+        // every new zone start cancelled the running one.
+        this.enableQueueing = enableQueueing === true;
+        this.log('Getting configured zones', this.zones, 'queueing', this.enableQueueing);
 
         // eslint-disable-next-line node/no-unsupported-features/es-syntax
         const serviceType = await import('rainbird/dist/RainBird/RainBirdService.js');

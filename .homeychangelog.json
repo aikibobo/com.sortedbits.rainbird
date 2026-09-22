@@ -35,5 +35,9 @@
   "1.3.0": {
     "en": "Support controllers with HTTPS-only firmware (rainbird library 1.2.17). Added rain delay (read, set, condition, trigger) and a start-program action.",
     "nl": "Ondersteunt controllers met HTTPS-only firmware (rainbird library 1.2.17). Regenuitstel toegevoegd (uitlezen, instellen, conditie, trigger) plus een actie om een programma te starten."
+  },
+  "1.3.1": {
+    "en": "Fix command queueing never being enabled, which made every zone start cancel the running zone.",
+    "nl": "Command queueing werd nooit ingeschakeld, waardoor elke zone-start de lopende zone afbrak. Opgelost."
   }
 }
